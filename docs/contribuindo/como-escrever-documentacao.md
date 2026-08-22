@@ -21,12 +21,12 @@ flowchart TD
 
 1. **Escolha a pasta certa** conforme o tipo de conteúdo:
 
-   | Se o texto... | Vai em |
-   |---|---|
-   | ensina do zero, passo a passo | `docs/documentacao/tutoriais/` |
-   | resolve um problema específico de quem já conhece o projeto | `docs/documentacao/guias-como-fazer/` |
-   | descreve algo com precisão técnica, para consulta | `docs/documentacao/referencia/` |
-   | discute o porquê, contexto ou decisão de design | `docs/documentacao/explicacoes/` |
+    | Se o texto... | Vai em |
+    |---|---|
+    | ensina do zero, passo a passo | `docs/documentacao/tutoriais/` |
+    | resolve um problema específico de quem já conhece o projeto | `docs/documentacao/guias-como-fazer/` |
+    | descreve algo com precisão técnica, para consulta | `docs/documentacao/referencia/` |
+    | discute o porquê, contexto ou decisão de design | `docs/documentacao/explicacoes/` |
 
 2. **Crie o arquivo Markdown** com nome em minúsculas e hífens
    (ex.: `configurar-autenticacao.md`).
@@ -42,10 +42,10 @@ flowchart TD
 
 5. **Rode localmente** para revisar o resultado renderizado:
 
-   ```bash
-   pip install -r requirements.txt
-   mkdocs serve
-   ```
+    ```bash
+    pip install -r requirements.txt
+    mkdocs serve
+    ```
 
 6. **Abra um pull request.** Veja o fluxo completo em
    [`CONTRIBUTING.md`](https://github.com/guesant/template-documentacao-tecnica/blob/main/CONTRIBUTING.md).

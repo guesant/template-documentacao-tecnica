@@ -29,12 +29,11 @@ theme:
     - content.code.copy
 
 nav:
-  - Início: index.md
   - Documentação:
-      - documentacao/index.md
+      - Visão geral: index.md
       - Tutoriais: documentacao/tutoriais/index.md
       - Guias práticos:
-          - documentacao/guias-como-fazer/index.md
+          - Visão geral: documentacao/guias-como-fazer/index.md
           - Publicar no GitHub Pages: documentacao/guias-como-fazer/publicar-no-github-pages.md
           - Rodar quality gates localmente: documentacao/guias-como-fazer/rodar-quality-gates-localmente.md
       - Referência: documentacao/referencia/index.md

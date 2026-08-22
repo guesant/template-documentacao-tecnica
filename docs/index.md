@@ -58,10 +58,10 @@ apagar.
    equipe. É o guia de estilo do seu projeto, não da ferramenta.
 5. Rode a documentação localmente:
 
-   ```bash
-   pip install -r requirements.txt
-   mkdocs serve
-   ```
+    ```bash
+    pip install -r requirements.txt
+    mkdocs serve
+    ```
 
 6. Publique no GitHub Pages: o workflow de deploy já faz o build e o
    publica automaticamente a cada push na branch principal.
