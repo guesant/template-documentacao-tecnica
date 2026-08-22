@@ -1,6 +1,7 @@
 {
   "name": "template-documentacao-tecnica",
   "private": true,
+  "license": "Unlicense",
   "description": "Quality gates de documentação (lint, ortografia, tipografia) para este template",
   "scripts": {
     "lint:md": "markdownlint-cli2 \"**/*.md\"",

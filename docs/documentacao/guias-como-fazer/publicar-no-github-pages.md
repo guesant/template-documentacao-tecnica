@@ -4,6 +4,15 @@ Este guia assume que você já tem o repositório no GitHub e já rodou o
 tutorial [Clonar e rodar este template](../tutoriais/index.md) pelo menos
 uma vez localmente.
 
+```mermaid
+flowchart LR
+    A[Push ou merge na main] --> B[Workflow docs.yml dispara]
+    B --> C[Job build: mkdocs build --strict]
+    C -->|falhou| X[Corrija o link quebrado]
+    C -->|passou| D[Job deploy: publica no GitHub Pages]
+    D --> E[Site no ar]
+```
+
 ## Habilite o GitHub Pages
 
 1. No GitHub, abra **Settings** do repositório.
@@ -41,9 +50,10 @@ Pages.
 - Se o job `deploy` falhar mas o `build` passou, confirme que a Source em
   Settings, Pages está mesmo em GitHub Actions, não em branch.
 
-## Ver também
+## Continue por aqui
 
 - [Como rodar os quality gates localmente](rodar-quality-gates-localmente.md),
   para pegar esse tipo de erro antes de dar push.
 - [Referência de configuração](../referencia/index.md), para o que cada
   campo de `mkdocs.yml` faz.
+- [Voltar aos guias práticos](index.md).

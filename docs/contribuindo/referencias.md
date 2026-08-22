@@ -12,6 +12,37 @@ natureza, um trabalho coletivo. Assim como um artigo acadêmico reúne e
 credita as fontes em que se apoia, esta seção credita os "autores" cujas
 ideias moldam as regras práticas do template.
 
+```mermaid
+flowchart TD
+    subgraph Frameworks
+        F1[Diátaxis]
+        F2[The Good Docs Project]
+    end
+    subgraph "Guias de estilo"
+        G1[Google]
+        G2[Microsoft]
+        G3[GitLab]
+        G4[Kubernetes]
+        G5[GOV.UK]
+    end
+    subgraph "Linguagem simples"
+        L1[Plain Language Guidelines]
+    end
+    subgraph Obrigatoriedade
+        O1[RFC 2119]
+        O2[RFC 8174]
+    end
+    subgraph Comunidade
+        C1[Write the Docs]
+    end
+    subgraph Hipertexto
+        H1[Wikipedia Manual of Style]
+    end
+    subgraph "Adoção real"
+        A1[Django]
+    end
+```
+
 ## Frameworks de organização de conteúdo
 
 <a id="diataxis"></a>
@@ -20,8 +51,8 @@ técnica em quatro tipos (tutorial, guia prático, referência, explicação) a
 partir de duas dimensões: ação vs. cognição, estudo vs. trabalho. Publicado
 originalmente como sistema de documentação da Divio e depois formalizado de
 forma independente em [diataxis.fr](https://diataxis.fr/). É a fonte
-estrutural de toda a divisão `docs/tutoriais/`, `docs/guias-como-fazer/`,
-`docs/referencia/`, `docs/explicacoes/` deste template.
+estrutural de toda a divisão `docs/documentacao/tutoriais/`, `docs/documentacao/guias-como-fazer/`,
+`docs/documentacao/referencia/`, `docs/documentacao/explicacoes/` deste template.
 
 <a id="good-docs-project"></a>
 **The Good Docs Project**: comunidade open source mantenedora de templates
@@ -96,6 +127,16 @@ documentação técnica, mantenedora de um guia coletivo de práticas
 ("Documentation Guide") e de conferências dedicadas ao tema. Disponível em
 [writethedocs.org/guide](https://www.writethedocs.org/guide/).
 
+## Convenções de hipertexto
+
+<a id="wikipedia-linking"></a>
+**Wikipedia: Manual of Style, Linking**: guia de estilo coletivo da
+Wikipédia em inglês para uso de hiperlinks dentro de artigos, recomendando
+linkar termos relevantes na primeira ocorrência, direto na prosa, em vez
+de reservar links só para uma lista ao final. Este template adota o mesmo
+princípio para navegação interna. Disponível em
+[en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Linking](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Linking).
+
 ## Exemplos de adoção em projetos reais
 
 <a id="django-docs"></a>
@@ -109,3 +150,8 @@ Disponível em
 
 Encontrou uma regra sem citação, ou uma citação que não reflete bem a fonte?
 Abra uma issue ou PR. Ver [`CONTRIBUTING.md`](https://github.com/guesant/template-documentacao-tecnica/blob/main/CONTRIBUTING.md).
+
+## Continue por aqui
+
+- [Voltar a Contribuindo](index.md).
+- [Voltar ao início](../index.md).

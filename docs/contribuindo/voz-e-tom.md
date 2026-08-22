@@ -43,6 +43,15 @@ calor humano sem perder precisão técnica.
 O tom se ajusta ao tipo de página (ver [Diátaxis](diataxis.md)) e à
 gravidade do que está sendo comunicado:
 
+```mermaid
+flowchart TD
+    A[Voz consistente do projeto] --> B[Tutorial: encorajador]
+    A --> C[Guia prático: direto ao objetivo]
+    A --> D[Referência: neutro, sem opinião]
+    A --> E[Explicação: discursivo, pode opinar]
+    A --> F[Aviso de risco: sério, sem eufemismo]
+```
+
 | Contexto | Tom esperado | Exemplo de abertura |
 |---|---|---|
 | Tutorial | Encorajador, passo a passo, comemora pequenas vitórias | "Ao final desta página, você terá..." |
@@ -63,7 +72,7 @@ quando a notícia é ruim.
 - **Metáforas que substituem definição técnica.** Uma analogia pode ajudar
   a intuição, mas não deve ser a única explicação de um termo técnico.
   Sempre acompanhe de uma definição precisa (ligue para a página de
-  [Referência](../referencia/index.md) correspondente).
+  [Referência](../documentacao/referencia/index.md) correspondente).
 - **Diminutivos e informalidade excessiva** ("rapidinho", "sem stress").
   Quebram consistência de tom e não traduzem bem para leitura automatizada
   ou tradução futura.
@@ -103,10 +112,11 @@ projeto.
 
 > "Renove o token antes de ele expirar."
 
-## Ver também
+## Continue por aqui
 
-- [Convenções de escrita](convencoes-de-escrita.md): regras objetivas de
-  formatação e estrutura, incluindo os níveis de obrigatoriedade (DEVE,
-  DEVERIA, PODE).
+- Próximo passo: [Convenções de escrita](convencoes-de-escrita.md), regras
+  objetivas de formatação e estrutura, incluindo os níveis de
+  obrigatoriedade (DEVE, DEVERIA, PODE).
 - [Por que a documentação é organizada em quatro tipos](diataxis.md):
   como o tipo de página influencia o tom.
+- [Voltar a Contribuindo](index.md).

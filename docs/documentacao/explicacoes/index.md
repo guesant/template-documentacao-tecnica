@@ -6,11 +6,12 @@ quer entender antes de adaptar.
 
 ## Por que MkDocs Material, e não outra ferramenta
 
-MkDocs Material foi escolhido por três razões concretas, não por
-popularidade:
+[MkDocs Material](https://squidfunk.github.io/mkdocs-material/) foi
+escolhido por três razões concretas, não por popularidade:
 
 - Gera um site estático a partir de Markdown puro, sem exigir componente
-  próprio de conteúdo, ao contrário do Docusaurus, que usa MDX e React.
+  próprio de conteúdo, ao contrário do [Docusaurus](https://docusaurus.io/),
+  que usa MDX e React.
 - Tem busca full-text embutida, sem depender de serviço externo.
 - Modo escuro e modo claro já vêm prontos, sem CSS adicional.
 
@@ -23,11 +24,19 @@ documentação técnica de texto corrido, esse custo vale a troca.
 Regra que depende só de memória em revisão de PR degrada com o tempo:
 quem revisa cansa, colaboradores novos não conhecem a norma implícita,
 exceções acumuladas viram o novo normal. Automatizar o que é
-mecanicamente verificável (ortografia, formatação Markdown, presença de
-emoji, link quebrado) libera a revisão humana para o que só um humano
-julga: se o tom está certo, se o conteúdo está no tipo certo de página, se
-a explicação é clara para quem não tem o contexto de quem escreveu. Mais
-detalhes em [Quality gates](../contribuindo/qualidade.md).
+mecanicamente verificável libera a revisão humana para o que só um humano
+julga.
+
+```mermaid
+flowchart LR
+    A[Conteúdo novo] --> B{Verificável mecanicamente?}
+    B -->|Sim| C[Quality gate automatizado]
+    B -->|Não| D[Revisão humana]
+    C --> C1[Ortografia, formatação, emoji, link quebrado]
+    D --> D1[Tom certo, tipo de página certo, clareza]
+```
+
+Mais detalhes em [Quality gates](../../contribuindo/qualidade.md).
 
 ## Por que `docs/contribuindo/` é permanente, não removível
 
@@ -41,15 +50,21 @@ que reconstruí-las do zero depois que a inconsistência já se instalou.
 
 ## Por que citar fontes em `docs/contribuindo/referencias.md`
 
+Ver a página completa em [Referências](../../contribuindo/referencias.md).
 Um guia de estilo sem fonte declarada é, na prática, opinião pessoal de
 quem escreveu naquele dia, difícil de defender quando alguém discorda. Um
 guia de estilo com cada regra rastreável a um framework ou guia
-estabelecido (Diátaxis, Google, Microsoft, GitLab, RFC 2119) dá a quem
-discorda algo concreto para debater: a fonte está errada, ou a aplicação
-da fonte a este projeto está errada. Isso é mais produtivo do que debater
-gosto pessoal.
+estabelecido ([Diátaxis](../../contribuindo/diataxis.md),
+[Google](../../contribuindo/referencias.md#google-style),
+[Microsoft](../../contribuindo/referencias.md#microsoft-style),
+[GitLab](../../contribuindo/referencias.md#gitlab-style),
+[RFC 2119](../../contribuindo/referencias.md#rfc2119)) dá a quem discorda
+algo concreto para debater: a fonte está errada, ou a aplicação da fonte a
+este projeto está errada. Isso é mais produtivo do que debater gosto
+pessoal.
 
-## Ver também
+## Continue por aqui
 
-- [Por que a documentação é organizada em quatro tipos](../contribuindo/diataxis.md)
-- [Referências](../contribuindo/referencias.md)
+- [Por que a documentação é organizada em quatro tipos](../../contribuindo/diataxis.md)
+- [Referências](../../contribuindo/referencias.md)
+- [Voltar ao início](../../index.md)

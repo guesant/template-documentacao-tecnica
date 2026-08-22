@@ -10,14 +10,23 @@ normas do projeto.
 
 ## Passos
 
+```mermaid
+flowchart TD
+    A[Escolher a pasta certa] --> B[Criar o arquivo Markdown]
+    B --> C[Escrever seguindo convenções e voz/tom]
+    C --> D[Adicionar à navegação em mkdocs.yml]
+    D --> E[Rodar localmente]
+    E --> F[Abrir pull request]
+```
+
 1. **Escolha a pasta certa** conforme o tipo de conteúdo:
 
    | Se o texto... | Vai em |
    |---|---|
-   | ensina do zero, passo a passo | `docs/tutoriais/` |
-   | resolve um problema específico de quem já conhece o projeto | `docs/guias-como-fazer/` |
-   | descreve algo com precisão técnica, para consulta | `docs/referencia/` |
-   | discute o porquê, contexto ou decisão de design | `docs/explicacoes/` |
+   | ensina do zero, passo a passo | `docs/documentacao/tutoriais/` |
+   | resolve um problema específico de quem já conhece o projeto | `docs/documentacao/guias-como-fazer/` |
+   | descreve algo com precisão técnica, para consulta | `docs/documentacao/referencia/` |
+   | discute o porquê, contexto ou decisão de design | `docs/documentacao/explicacoes/` |
 
 2. **Crie o arquivo Markdown** com nome em minúsculas e hífens
    (ex.: `configurar-autenticacao.md`).
@@ -64,3 +73,9 @@ e do [GitLab](referencias.md#gitlab-style):
 - [ ] Nenhum dado sensível real aparece em exemplos.
 - [ ] Nenhum TODO ou rascunho ficou no texto publicado.
 - [ ] A página foi adicionada à navegação em `mkdocs.yml`.
+
+## Continue por aqui
+
+- Próximo passo: [Quality gates](qualidade.md), para rodar essas
+  verificações antes de abrir o PR.
+- [Voltar a Contribuindo](index.md).

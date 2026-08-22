@@ -15,6 +15,17 @@ O Diátaxis cruza duas perguntas:
   resolver algo agora)?
 - Ela precisa de **ação** (fazer algo) ou de **cognição** (entender algo)?
 
+```mermaid
+quadrantChart
+    title Os quatro tipos do Diátaxis
+    x-axis Ação --> Cognição
+    y-axis Trabalhando --> Estudando
+    quadrant-1 Explicação
+    quadrant-2 Tutorial
+    quadrant-3 Guia prático
+    quadrant-4 Referência
+```
+
 |  | Ação | Cognição |
 |---|---|---|
 | **Estudando** | Tutorial | Explicação |
@@ -50,10 +61,10 @@ framework específico.
 
 ## Como isso se aplica neste template
 
-- [`docs/tutoriais/`](../tutoriais/index.md): passo a passo, do zero a um resultado.
-- [`docs/guias-como-fazer/`](../guias-como-fazer/index.md): solução para um problema específico.
-- [`docs/referencia/`](../referencia/index.md): descrição técnica precisa, para consulta.
-- [`docs/explicacoes/`](../explicacoes/index.md): contexto e decisões, como esta própria página.
+- [`docs/documentacao/tutoriais/`](../documentacao/tutoriais/index.md): passo a passo, do zero a um resultado.
+- [`docs/documentacao/guias-como-fazer/`](../documentacao/guias-como-fazer/index.md): solução para um problema específico.
+- [`docs/documentacao/referencia/`](../documentacao/referencia/index.md): descrição técnica precisa, para consulta.
+- [`docs/documentacao/explicacoes/`](../documentacao/explicacoes/index.md): contexto e decisões, como esta própria página.
 
 Veja o [guia de como escrever uma página nova](como-escrever-documentacao.md)
 para aplicar isso na prática, a [referência de convenções de escrita](convencoes-de-escrita.md)
@@ -63,3 +74,8 @@ escrita.
 ## Referências
 
 Ver a lista completa e as fontes primárias em [Referências](referencias.md#diataxis).
+
+## Continue por aqui
+
+- Próximo passo: [Voz e tom](voz-e-tom.md).
+- [Voltar a Contribuindo](index.md).

@@ -4,9 +4,21 @@ Este guia mostra como rodar, na sua máquina, as mesmas quatro verificações
 que o CI roda a cada pull request. Rodar localmente antes de abrir o PR
 evita o ciclo de esperar o CI falhar, corrigir, esperar de novo.
 
+```mermaid
+flowchart TD
+    A[Tem Docker?] -->|Sim| B[Opção A: Docker]
+    A -->|Não| C[Opção B: Node instalado]
+    B --> D[markdownlint + cspell]
+    C --> D
+    D --> E[Checker de tipografia]
+    E --> F[mkdocs build --strict]
+    F --> G[Tudo passou: abra o PR]
+```
+
 ## Pré-requisitos
 
-- Docker, se você quer rodar sem instalar Node no seu sistema (recomendado).
+- [Docker](https://www.docker.com/), se você quer rodar sem instalar Node
+  no seu sistema (recomendado).
 - Ou Node.js 24 ou mais recente, se preferir instalar direto.
 - Python 3.9 ou mais recente (já necessário para o MkDocs).
 
@@ -52,11 +64,12 @@ mkdocs build --strict
 | `mkdocs build --strict` | Link interno quebrado | Corrija o caminho relativo do link ou adicione a página que falta em `nav:` no `mkdocs.yml`. |
 
 Detalhes de por que cada verificação existe estão em
-[Quality gates](../contribuindo/qualidade.md).
+[Quality gates](../../contribuindo/qualidade.md).
 
-## Ver também
+## Continue por aqui
 
-- [Quality gates](../contribuindo/qualidade.md): o que cada verificação
+- [Quality gates](../../contribuindo/qualidade.md): o que cada verificação
   pega e por quê.
 - [Como publicar no GitHub Pages](publicar-no-github-pages.md): o próximo
   passo depois que os gates passam localmente.
+- [Voltar aos guias práticos](index.md).

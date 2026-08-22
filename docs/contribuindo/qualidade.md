@@ -8,10 +8,24 @@ norma. Este projeto automatiza o que dá para automatizar e usa revisão
 humana só para o que exige julgamento (tom, clareza, se o conteúdo está no
 tipo certo de página).
 
-Quatro verificações rodam em CI (`.github/workflows/lint.yml`) a cada push
-e pull request para `main`.
+Quatro verificações rodam em paralelo em CI (`.github/workflows/lint.yml`)
+a cada push e pull request para `main`.
 
-## 1. markdownlint
+```mermaid
+flowchart LR
+    A[Push ou pull request] --> B[markdownlint]
+    A --> C[cspell pt-BR]
+    A --> D[Tipografia]
+    A --> E[mkdocs build --strict]
+    B --> F{Tudo passou?}
+    C --> F
+    D --> F
+    E --> F
+    F -->|Sim| G[Merge liberado]
+    F -->|Não| H[PR bloqueado]
+```
+
+## markdownlint
 
 **O que verifica:** estrutura e formatação Markdown. Cabeçalhos sem linha
 em branco ao redor, listas numeradas com prefixo inconsistente, blocos de
@@ -26,7 +40,7 @@ configurado em [`.markdownlint-cli2.jsonc`](https://github.com/guesant/template-
 docker run --rm -v "$PWD:/work" -w /work node:24-alpine sh -c "npm ci && npm run lint:md"
 ```
 
-## 2. cspell (ortografia em pt-BR)
+## cspell (ortografia em pt-BR)
 
 **O que verifica:** palavras que não existem em português nem estão na
 lista de termos técnicos do projeto. Pega erro de digitação real, não
@@ -46,7 +60,7 @@ não em exceções soltas espalhadas pelo texto.
 docker run --rm -v "$PWD:/work" -w /work node:24-alpine sh -c "npm ci && npm run lint:spell"
 ```
 
-## 3. Tipografia (emoji, pontuação banida, caractere invisível)
+## Tipografia (emoji, pontuação banida, caractere invisível)
 
 **O que verifica:** cinco classes de problema, em ordem de gravidade.
 
@@ -84,7 +98,7 @@ para não exigir toolchain além do que o projeto já usa para o MkDocs).
 python3 scripts/check_tipografia.py
 ```
 
-## 4. `mkdocs build --strict`
+## `mkdocs build --strict`
 
 **O que verifica:** link interno quebrado, referência a página que não
 existe na navegação. Já documentado em
@@ -114,8 +128,11 @@ quality gates não é substituir revisão, é eliminar da revisão humana o
 trabalho mecânico que uma máquina faz melhor, para sobrar atenção para o
 que só um humano julga.
 
-## Ver também
+## Continue por aqui
 
+- Próximo passo: [Referências](referencias.md), a bibliografia completa
+  desta seção.
 - [Convenções de escrita](convencoes-de-escrita.md)
 - [Voz e tom](voz-e-tom.md)
 - [Como escrever uma página de documentação](como-escrever-documentacao.md)
+- [Voltar a Contribuindo](index.md)

@@ -6,6 +6,28 @@ deste template. Cada regra cita a fonte de onde vem. A lista completa está em
 [Voz e tom](voz-e-tom.md). Esta página trata do que é objetivamente
 verificável: gramática, pontuação, estrutura, formatação, terminologia.
 
+<a id="escopo"></a>
+
+**Escopo: todo arquivo `.md` deste repositório, não só `docs/`.** Estas
+regras (voz, pontuação banida, crase, listas, links) valem para
+`README.md`, `CONTRIBUTING.md` e `AGENTS.md` (e seus symlinks `CLAUDE.md`
+e `GEMINI.md`) exatamente como valem para qualquer página em `docs/`. Não
+existe zona informal onde travessão ou crase em excesso ficam de fora só
+porque o arquivo está fora de `docs/`. O [checker de tipografia](qualidade.md)
+já escaneia `README.md`, `CONTRIBUTING.md` e `AGENTS.md` junto com
+`docs/**/*.md`. Regras de conteúdo que dependem de contexto (crase só
+para literal, links liberais, lista só quando a ordem importa) não são
+verificadas automaticamente fora de `docs/`, mas continuam DEVE.
+
+```mermaid
+flowchart TD
+    A[Vai marcar uma palavra com crase?] --> B{É literal: arquivo, comando, flag, valor?}
+    B -->|Não| C[Não use crase. Itálico, negrito ou nada]
+    B -->|Sim| D{Já apareceu com crase antes neste parágrafo?}
+    D -->|Sim| E[Não repita. Siga em prosa comum]
+    D -->|Não| F[Use crase uma vez]
+```
+
 <a id="niveis-de-obrigatoriedade"></a>
 
 ## Níveis de obrigatoriedade
@@ -68,12 +90,12 @@ fonte.
 **Ponto e vírgula: também banido.** Quase sempre está juntando duas
 orações que deveriam ser duas frases separadas por ponto final. Poucas
 pessoas escrevem documentação técnica em português usando ponto e vírgula
-com naturalidade. É um sinal de prosa gerada por máquina, não de precisão.
-NÃO DEVE haver ponto e vírgula em texto corrido. Se a lista de itens já
-usa vírgula internamente e parece confusa, transforme em lista com
-marcadores em vez de espremer tudo numa frase só. Dentro de bloco de
-código o ponto e vírgula continua permitido normalmente, é sintaxe real
-de várias linguagens.
+com naturalidade, e forçar a leitura a parar numa pontuação incomum
+atrapalha mais do que ajuda. NÃO DEVE haver ponto e vírgula em texto
+corrido. Se a lista de itens já usa vírgula internamente e parece
+confusa, transforme em lista com marcadores em vez de espremer tudo numa
+frase só. Dentro de bloco de código o ponto e vírgula continua permitido
+normalmente, é sintaxe real de várias linguagens.
 
 **Reticências: só como três pontos digitados, nunca como caractere
 único.** Digite `...` (três pontos separados). Não use o glifo único de
@@ -133,10 +155,52 @@ condicionais é, na prática, um guia prático disfarçado.
 | Passo opcional dentro de um fluxo | Bloco `!!! note` ou texto explícito "(opcional)" | DEVE |
 | Emoji | Nunca. Ver [Quality gates](qualidade.md#emojis) | NÃO DEVE |
 
+<a id="listas-vs-prosa"></a>
+
+**Lista numerada só quando a ordem importa de verdade.** Uma lista
+numerada afirma implicitamente "faça 1, depois 2, depois 3" ou "isto está
+ranqueado". Se os itens não dependem da ordem entre si (são fatos
+paralelos, opções independentes, ou peças de uma mesma ideia), a lista
+numerada está mentindo sobre a estrutura do conteúdo.
+
+```mermaid
+flowchart TD
+    A[Vou listar vários itens] --> B{A ordem entre eles importa?}
+    B -->|Sim, é uma sequência de passos ou um ranking| C[Lista numerada]
+    B -->|Não, são itens paralelos| D{São de fato itens discretos, ou uma ideia contínua?}
+    D -->|Itens discretos| E[Lista com marcadores]
+    D -->|Ideia contínua| F[Parágrafo de prosa]
+```
+
+- DEVE usar lista numerada só para: passo a passo onde cada item depende
+  do anterior, ou itens explicitamente ranqueados (ex.: "em ordem de
+  gravidade").
+- NÃO DEVE usar lista numerada para enumerar checagens, ferramentas ou
+  fatos que ocorrem em paralelo ou não têm relação de dependência entre
+  si, mesmo que sejam "quatro coisas". Use lista com marcadores.
+- NÃO DEVE fragmentar em lista (numerada ou com marcadores) o que é, na
+  prática, uma única ideia contínua com duas ou três frases relacionadas.
+  Escreva um parágrafo. Lista curta demais vira ruído visual, não ajuda a
+  escanear nada.
+- Título de seção numerado (`## 1. Nome`) só é aceitável quando os itens
+  realmente são consultados por número (ex.: "veja a verificação 2"). Se
+  as seções descrevem coisas paralelas, use títulos sem número.
+
+**Tamanho da lista, ordenada ou não.** DEVERIA ter no máximo sete itens.
+O [Microsoft Writing Style Guide](referencias.md#microsoft-style) recomenda
+entre dois e sete itens por lista, com cada item curto o bastante para
+quem lê enxergar dois ou três de uma vez, e trata mais de um parágrafo por
+item como exceção rara. Se a lista naturalmente passa de sete itens,
+DEVERIA agrupar em subseções com título próprio, ou reescrever como
+parágrafo de prosa com frase de introdução, prática também recomendada
+pelo [GOV.UK Style guide](referencias.md#gov-uk) para listas muito longas.
+Uma lista de doze itens não fica mais escaneável só por ter marcadores:
+fica um bloco de texto disfarçado de lista.
+
 ## Terminologia
 
 - Cada termo técnico específico do projeto DEVE ter uma definição única em
-  `docs/referencia/`. Se duas páginas definem o mesmo termo de formas
+  `docs/documentacao/referencia/`. Se duas páginas definem o mesmo termo de formas
   diferentes, isso é um bug de documentação, não uma questão de estilo.
 - Um glossário centralizado é recomendado. O [Google Developer Documentation
   Style Guide](referencias.md#google-style) e o [Kubernetes Documentation
@@ -180,16 +244,38 @@ condicionais é, na prática, um guia prático disfarçado.
 ## Links
 
 - Links internos DEVEM ser relativos ao arquivo atual (ex.:
-  `../referencia/index.md`), não absolutos ao domínio publicado.
+  `../documentacao/referencia/index.md`), não absolutos ao domínio publicado.
 - `mkdocs build --strict` DEVE passar sem erros antes do merge. Ele falha
   o build se houver link interno quebrado.
 - Links externos para fontes citadas DEVEM apontar para a origem primária
   (documentação oficial, RFC, especificação), não para resumos de terceiros.
 
+<a id="links-liberais"></a>
+
+**Linke sem medo, no estilo Wikipédia.** O
+[manual de estilo da Wikipédia sobre links](referencias.md#wikipedia-linking)
+recomenda linkar a primeira ocorrência de um termo relevante direto na
+frase onde ele aparece, não só numa lista de links ao final da página.
+Este template adota a mesma prática:
+
+- DEVERIA haver link na primeira menção de qualquer termo, página ou
+  conceito deste projeto que tenha sua própria página, mesmo no meio de
+  uma frase de prosa comum. Não espere chegar numa seção "Continue por
+  aqui" para linkar algo que já foi mencionado três parágrafos antes.
+- Um parágrafo com vários links não é ruído. É o oposto de crase em
+  excesso: aqui, mais é melhor, porque cada link é uma porta de saída real
+  para quem quer aprofundar, não uma marcação decorativa.
+- NÃO DEVE repetir o link para o mesmo alvo mais de uma vez dentro da
+  mesma seção curta. Linke na primeira ocorrência da seção, depois
+  mencione o termo em prosa comum.
+- Toda página DEVE terminar com uma seção "Continue por aqui" apontando
+  o próximo passo lógico no fluxo de leitura, além dos links já linkados
+  ao longo do texto.
+
 ## O que é permitido
 
 - PODE haver opinião e comparação de alternativas em páginas de
-  [Explicação](../explicacoes/index.md). É o único tipo de conteúdo em que
+  [Explicação](../documentacao/explicacoes/index.md). É o único tipo de conteúdo em que
   isso é esperado.
 - PODE haver reformulação de uma regra desta página para o contexto
   específico de um projeto que adote este template. Ver
@@ -213,10 +299,11 @@ condicionais é, na prática, um guia prático disfarçado.
   alfabeto latino padrão de prosa em português técnico. Ver
   [Quality gates](qualidade.md).
 
-## Ver também
+## Continue por aqui
 
+- Próximo passo: [Como escrever uma página de documentação](como-escrever-documentacao.md).
 - [Voz e tom](voz-e-tom.md)
 - [Por que a documentação é organizada em quatro tipos](diataxis.md)
-- [Como escrever uma página de documentação](como-escrever-documentacao.md)
 - [Quality gates: como essas regras são verificadas automaticamente](qualidade.md)
 - [Referências](referencias.md)
+- [Voltar a Contribuindo](index.md)

@@ -20,8 +20,8 @@ leia:
 - [Convenções de escrita](docs/contribuindo/convencoes-de-escrita.md): regras de estilo e formatação, para consulta rápida.
 
 Essas regras ficam na aba `docs/contribuindo/`, separada dos quatro tipos de
-conteúdo (`docs/tutoriais/`, `docs/guias-como-fazer/`, `docs/referencia/`,
-`docs/explicacoes/`). `docs/contribuindo/` acompanha o template
+conteúdo (`docs/documentacao/tutoriais/`, `docs/documentacao/guias-como-fazer/`, `docs/documentacao/referencia/`,
+`docs/documentacao/explicacoes/`). `docs/contribuindo/` acompanha o template
 permanentemente como guia de estilo vivo. Ajuste-o conforme as regras da
 sua equipe.
 
@@ -48,6 +48,16 @@ primeiras etapas de uma vez.
 
 ## Fluxo de contribuição
 
+```mermaid
+flowchart LR
+    A[Criar branch] --> B[Editar e rodar mkdocs serve]
+    B --> C[Rodar quality gates localmente]
+    C --> D[Abrir pull request]
+    D --> E[CI roda os mesmos gates]
+    E --> F[Revisão de pelo menos uma pessoa]
+    F --> G[Merge]
+```
+
 1. Crie uma branch a partir de `main`.
 2. Rode a documentação localmente para conferir o resultado:
 
@@ -66,3 +76,10 @@ Use [Conventional Commits](https://www.conventionalcommits.org/) no formato
 `tipo(escopo): assunto`, com assunto no imperativo e sem ponto final. Tipos
 usados neste projeto: `feat`, `fix`, `docs`, `style`, `refactor`, `chore`,
 `ci`, `build`.
+
+## Continue por aqui
+
+- [`AGENTS.md`](AGENTS.md): instruções para agentes de IA.
+- [`docs/contribuindo/index.md`](docs/contribuindo/index.md): o guia de
+  estilo completo.
+- [`README.md`](README.md): visão geral do template.

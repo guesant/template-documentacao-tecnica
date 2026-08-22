@@ -31,13 +31,14 @@ theme:
 nav:
   - Início: index.md
   - Documentação:
-      - Tutoriais: tutoriais/index.md
+      - documentacao/index.md
+      - Tutoriais: documentacao/tutoriais/index.md
       - Guias práticos:
-          - guias-como-fazer/index.md
-          - Publicar no GitHub Pages: guias-como-fazer/publicar-no-github-pages.md
-          - Rodar quality gates localmente: guias-como-fazer/rodar-quality-gates-localmente.md
-      - Referência: referencia/index.md
-      - Explicações: explicacoes/index.md
+          - documentacao/guias-como-fazer/index.md
+          - Publicar no GitHub Pages: documentacao/guias-como-fazer/publicar-no-github-pages.md
+          - Rodar quality gates localmente: documentacao/guias-como-fazer/rodar-quality-gates-localmente.md
+      - Referência: documentacao/referencia/index.md
+      - Explicações: documentacao/explicacoes/index.md
   - Contribuindo:
       - contribuindo/index.md
       - Por que Diátaxis: contribuindo/diataxis.md
@@ -50,7 +51,11 @@ nav:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight
   - toc:
       permalink: true
