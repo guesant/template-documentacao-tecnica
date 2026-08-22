@@ -12,11 +12,20 @@ local pronto para editar.
 Nenhum outro pré-requisito. Você não precisa instalar Node nem MkDocs
 globalmente antes de começar.
 
+```mermaid
+flowchart LR
+    A[1. Clonar] --> B[2. Instalar dependências]
+    B --> C[3. Rodar servidor local]
+    C --> D[4. Abrir no navegador]
+    D --> E[5. Editar e ver live-reload]
+```
+
 ## Passo 1: obtenha uma cópia do repositório
 
-Se você está adotando este template para um projeto novo, clique em **Use
-this template** na página do repositório no GitHub e crie o seu próprio
-repositório a partir dele. Depois clone o seu repositório novo:
+Se você está adotando este template para um projeto novo, clique em
+[Use this template](https://github.com/guesant/template-documentacao-tecnica/generate)
+e crie o seu próprio repositório a partir dele. Depois clone o seu
+repositório novo:
 
 ```bash
 git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
@@ -33,8 +42,8 @@ cd template-documentacao-tecnica
 
 ## Passo 2: instale as dependências do site
 
-O site é gerado com MkDocs Material. As dependências Python estão listadas
-em `requirements.txt`:
+O site é gerado com [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
+As dependências Python estão listadas em `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
@@ -73,7 +82,11 @@ o resultado imediatamente, revisar antes de commitar.
 ## O que você tem agora
 
 Um site de documentação completo rodando localmente, com a estrutura
-Diátaxis já pronta e as regras de escrita já documentadas em
-[Contribuindo](../contribuindo/index.md). Para o próximo passo, publicar
-essa documentação de verdade, veja o guia
-[Como publicar no GitHub Pages](../guias-como-fazer/publicar-no-github-pages.md).
+[Diátaxis](../../contribuindo/diataxis.md) já pronta e as regras de
+escrita já documentadas em [Contribuindo](../../contribuindo/index.md).
+
+## Continue por aqui
+
+- Próximo passo: [Como publicar no GitHub Pages](../guias-como-fazer/publicar-no-github-pages.md).
+- Vai escrever conteúdo? Leia [Como escrever uma página de documentação](../../contribuindo/como-escrever-documentacao.md).
+- [Voltar ao início](../../index.md).

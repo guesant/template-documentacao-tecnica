@@ -101,4 +101,10 @@ homóglifos
 full
 AGENTS
 GEMINI
+convencoes
+escaneável
+Mermaid
+Linking
+wikipedia
+linkados
 

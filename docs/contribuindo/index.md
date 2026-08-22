@@ -8,9 +8,9 @@ nova.
 Esta aba faz parte permanente do template. É o guia de estilo vivo do seu
 projeto de documentação. Ao adotar o template, **edite este conteúdo para o
 seu contexto** (adicione, remova ou reescreva regras conforme a sua equipe
-decidir), em vez de apagá-lo. `docs/tutoriais/`, `docs/guias-como-fazer/`,
-`docs/referencia/` e `docs/explicacoes/` são onde o conteúdo do seu projeto
-vive; esta aba é onde ficam as regras de como escrevê-lo.
+decidir), em vez de apagá-lo. `docs/documentacao/tutoriais/`, `docs/documentacao/guias-como-fazer/`,
+`docs/documentacao/referencia/` e `docs/documentacao/explicacoes/` são onde o conteúdo do seu projeto
+vive. Esta aba é onde ficam as regras de como escrevê-lo.
 
 ## Como este guia foi construído
 
@@ -22,11 +22,31 @@ guias de estilo de [Google](referencias.md#google-style),
 [Microsoft](referencias.md#microsoft-style), [GitLab](referencias.md#gitlab-style),
 [Kubernetes](referencias.md#k8s-style) e [GOV.UK](referencias.md#gov-uk), as
 [Plain Language Guidelines](referencias.md#plain-language), o vocabulário de
-obrigatoriedade de [RFC 2119](referencias.md#rfc2119), e as práticas
+obrigatoriedade de [RFC 2119](referencias.md#rfc2119), as práticas
 coletivas do [Write the Docs](referencias.md#write-the-docs) e do
-[The Good Docs Project](referencias.md#good-docs-project). Cada regra
-prática nas páginas a seguir cita de onde vem. A lista completa e as
+[The Good Docs Project](referencias.md#good-docs-project), e o
+[manual de estilo da Wikipédia sobre links](referencias.md#wikipedia-linking)
+para a convenção de hipertexto liberal usada em toda esta seção. Cada
+regra prática nas páginas a seguir cita de onde vem. A lista completa e as
 fontes primárias estão em [Referências](referencias.md).
+
+## Como as páginas se encaixam
+
+```mermaid
+flowchart TD
+    A[Por que Diátaxis] --> B[Voz e tom]
+    B --> C[Convenções de escrita]
+    C --> D[Como escrever documentação]
+    D --> E[Quality gates]
+    E --> F[Referências]
+
+    click A "diataxis/" "Por que a documentação é organizada em quatro tipos"
+    click B "voz-e-tom/" "Voz e tom"
+    click C "convencoes-de-escrita/" "Convenções de escrita"
+    click D "como-escrever-documentacao/" "Como escrever documentação"
+    click E "qualidade/" "Quality gates"
+    click F "referencias/" "Referências"
+```
 
 ## Páginas
 
@@ -41,3 +61,8 @@ fontes primárias estão em [Referências](referencias.md).
 - [Quality gates](qualidade.md): como as regras acima são verificadas
   automaticamente (lint, ortografia, tipografia).
 - [Referências](referencias.md): bibliografia completa desta seção.
+
+## Continue por aqui
+
+- Comece por [Por que a documentação é organizada em quatro tipos](diataxis.md).
+- [Voltar ao início](../index.md).

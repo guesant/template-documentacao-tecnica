@@ -1,8 +1,27 @@
 # Referência de configuração deste template
 
 Descrição técnica precisa de cada arquivo de configuração deste template.
-Para instruções passo a passo, veja os [guias práticos](../guias-como-fazer/index.md);
-esta página é para consulta, não para seguir do início ao fim.
+Para instruções passo a passo, veja os [guias práticos](../guias-como-fazer/index.md).
+Esta página é para consulta, não para seguir do início ao fim.
+
+```mermaid
+flowchart LR
+    subgraph Site
+        A[mkdocs.yml] --> S[Site publicado]
+        R[requirements.txt] --> S
+    end
+    subgraph "Quality gates"
+        P[package.json] --> Q[markdownlint + cspell]
+        T[scripts/check_tipografia.py] --> Q
+    end
+    subgraph CI/CD
+        W1[docs.yml] --> S
+        W2[lint.yml] --> Q
+        DB[dependabot.yml] --> P
+        DB --> R
+        DB --> W1
+    end
+```
 
 ## `mkdocs.yml`
 
@@ -39,7 +58,8 @@ Dependências Python para gerar o site. Uma única entrada:
 
 ## `package.json`
 
-Dependências Node para os quality gates de texto (não para gerar o site).
+Dependências Node para os [quality gates](../../contribuindo/qualidade.md) de
+texto (não para gerar o site).
 
 | Script | Comando | O que faz |
 |---|---|---|
@@ -57,7 +77,8 @@ Dependências Node para os quality gates de texto (não para gerar o site).
 
 ## `.github/dependabot.yml`
 
-Atualiza automaticamente, semanalmente, em pull requests separados:
+O [Dependabot](https://docs.github.com/pt/code-security/dependabot) atualiza
+automaticamente, semanalmente, em pull requests separados:
 
 | Ecossistema | Diretório | Cobre |
 |---|---|---|
@@ -68,7 +89,7 @@ Atualiza automaticamente, semanalmente, em pull requests separados:
 ## Versões de referência
 
 Este template foi configurado com as versões abaixo. Pull requests do
-Dependabot mantêm isso atualizado; esta tabela pode ficar desatualizada
+Dependabot mantêm isso atualizado. Esta tabela pode ficar desatualizada
 entre atualizações.
 
 | Ferramenta | Versão de referência |
@@ -82,9 +103,10 @@ entre atualizações.
 | `actions/setup-node` | v7 |
 | `actions/deploy-pages` | v5 |
 
-## Ver também
+## Continue por aqui
 
-- [Convenções de escrita](../contribuindo/convencoes-de-escrita.md): regras
+- [Convenções de escrita](../../contribuindo/convencoes-de-escrita.md): regras
   de conteúdo, não de configuração.
-- [Quality gates](../contribuindo/qualidade.md): o que cada ferramenta
+- [Quality gates](../../contribuindo/qualidade.md): o que cada ferramenta
   desta página verifica e por quê.
+- [Voltar ao início](../../index.md).
