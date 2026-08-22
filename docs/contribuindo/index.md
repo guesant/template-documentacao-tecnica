@@ -10,7 +10,7 @@ projeto de documentação. Ao adotar o template, **edite este conteúdo para o
 seu contexto** (adicione, remova ou reescreva regras conforme a sua equipe
 decidir), em vez de apagá-lo. `docs/tutoriais/`, `docs/guias-como-fazer/`,
 `docs/referencia/` e `docs/explicacoes/` são onde o conteúdo do seu projeto
-vive; esta aba é onde ficam as regras de como escrevê-lo.
+vive. Esta aba é onde ficam as regras de como escrevê-lo.
 
 ## Como este guia foi construído
 

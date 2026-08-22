@@ -1,7 +1,7 @@
 # Convenções de escrita
 
 Referência das regras de estilo e formatação usadas em toda a documentação
-deste template. Cada regra cita a fonte de onde vem; a lista completa está em
+deste template. Cada regra cita a fonte de onde vem. A lista completa está em
 [Referências](referencias.md). Para princípios de personalidade e tom, veja
 [Voz e tom](voz-e-tom.md). Esta página trata do que é objetivamente
 verificável: gramática, pontuação, estrutura, formatação, terminologia.
@@ -46,39 +46,65 @@ documentação técnica em português e inglês.
 
 ## Pontuação
 
-<a id="uso-do-travessao"></a>
+<a id="pontuacao-banida"></a>
 
-**Travessão (—) com moderação.** É fácil abusar do travessão como muleta
-para encadear ideias sem parar para pontuar de verdade, e o resultado é
-prosa que cansa de ler. Regra prática:
+**Travessão, meia-risca e seta são banidos, sem exceção.** Não é uma
+questão de moderação, é proibição total. Nenhuma página deste template usa
+travessão (o traço longo de separação de frase, U+2014), meia-risca (o
+traço de intervalo, U+2013) ou seta (U+2192, U+2190, U+2194) em nenhuma
+circunstância, nem em citação, nem em exemplo, nem em paráfrase de outra
+fonte.
 
-- NÃO DEVERIA haver mais de um travessão por parágrafo curto (até 4 frases).
-- Antes de usar um travessão, teste se um ponto final, vírgula ou dois-pontos
-  resolve melhor. Na maioria das vezes resolve.
-- PODE usar travessão para uma interrupção genuína no meio da frase (um
-  aposto que muda de assunto por um instante), não como conector padrão
-  entre duas ideias que já teriam uma pontuação mais simples.
-- Revisão de PR DEVE sinalizar parágrafos com uso repetitivo de travessão
-  como ponto de atenção de qualidade de prosa, do mesmo jeito que sinaliza
-  erro de digitação.
+- NÃO DEVE haver travessão, meia-risca ou seta em nenhum arquivo Markdown
+  do projeto. Reescreva com ponto final, vírgula ou dois-pontos.
+- Para indicar sequência de passos em uma interface (por exemplo, "abra
+  Configurações, depois Geral"), use vírgula ou liste os passos numerados.
+  Não use seta.
+- Para intervalo numérico, escreva por extenso ("de 2019 a 2020"), não use
+  meia-risca.
+- O [quality gate de tipografia](qualidade.md) rejeita automaticamente
+  qualquer um dos três, em qualquer página.
 
-**Aspas retas, não tipográficas.** Use `"..."` e `'...'`, não `"..."` /
-`'...'`. Aspas retas copiam e colam sem quebrar em terminais e blocos de
-código; é o motivo prático por trás da preferência, não uma questão estética.
-O [quality gate de tipografia](qualidade.md) garante isso automaticamente.
+**Ponto e vírgula: também banido.** Quase sempre está juntando duas
+orações que deveriam ser duas frases separadas por ponto final. Poucas
+pessoas escrevem documentação técnica em português usando ponto e vírgula
+com naturalidade. É um sinal de prosa gerada por máquina, não de precisão.
+NÃO DEVE haver ponto e vírgula em texto corrido. Se a lista de itens já
+usa vírgula internamente e parece confusa, transforme em lista com
+marcadores em vez de espremer tudo numa frase só. Dentro de bloco de
+código o ponto e vírgula continua permitido normalmente, é sintaxe real
+de várias linguagens.
+
+**Reticências: só como três pontos digitados, nunca como caractere
+único.** Digite `...` (três pontos separados). Não use o glifo único de
+reticências: a maioria dos teclados no Brasil não tem essa tecla, e ele
+aparece sobretudo por autocorreção de editor de texto ou por geração
+automática de texto. O [quality gate de tipografia](qualidade.md) rejeita
+o glifo único automaticamente.
+
+**Aspas retas, não tipográficas.** Use `"..."` e `'...'`, não a versão
+curva dessas mesmas aspas. Aspas retas copiam e colam sem quebrar em
+terminais e blocos de código. É o motivo prático por trás da preferência,
+não uma questão estética. O [quality gate de tipografia](qualidade.md)
+garante isso automaticamente.
 
 <a id="uso-de-codigo-inline"></a>
 
-**Código inline (crase) só para literais, não para ênfase.** Use crase
-para nome de arquivo, comando, flag, chave de configuração, valor literal
-ou identificador de código: `mkdocs.yml`, `npm run lint`, `timeout`. NÃO
-DEVE usar crase para dar destaque a uma palavra comum só porque ela soa
-técnica. Se a palavra não é algo que alguém digitaria literalmente num
-terminal ou num arquivo de configuração, ela não leva crase; use itálico
-ou negrito para ênfase, ou nenhuma marcação. Marcar quase todo substantivo
-com crase é um padrão comum em texto gerado por IA e o motivo prático de
-banir isso aqui é o mesmo do travessão: dificulta a leitura e sinaliza
-descuido em vez de precisão.
+**Código inline (crase) só para literais, com moderação mesmo aí.** Use
+crase para nome de arquivo, comando, flag, chave de configuração, valor
+literal ou identificador de código, nunca para dar destaque a uma palavra
+comum só porque ela soa técnica. Se a palavra não é algo que alguém
+digitaria literalmente num terminal ou num arquivo de configuração, ela
+não leva crase. Use itálico, negrito ou nenhuma marcação para ênfase.
+
+Além disso, DEVERIA evitar repetir o mesmo caminho ou comando entre crases
+várias vezes seguidas no mesmo parágrafo. Nomeie o arquivo ou comando uma
+vez com crase e siga o resto do parágrafo em prosa comum, referindo-se a
+ele por nome, sem marcação. Um parágrafo onde quase todo substantivo está
+entre crases lê pior do que um parágrafo sem nenhuma, mesmo quando cada
+crase individual está tecnicamente correta. É o mesmo problema do
+travessão: densidade constante de marcação sinaliza descuido, não
+precisão.
 
 ## Estrutura de página
 

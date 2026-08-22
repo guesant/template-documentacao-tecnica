@@ -1,8 +1,8 @@
 # Referência de configuração deste template
 
 Descrição técnica precisa de cada arquivo de configuração deste template.
-Para instruções passo a passo, veja os [guias práticos](../guias-como-fazer/index.md);
-esta página é para consulta, não para seguir do início ao fim.
+Para instruções passo a passo, veja os [guias práticos](../guias-como-fazer/index.md).
+Esta página é para consulta, não para seguir do início ao fim.
 
 ## `mkdocs.yml`
 
@@ -68,7 +68,7 @@ Atualiza automaticamente, semanalmente, em pull requests separados:
 ## Versões de referência
 
 Este template foi configurado com as versões abaixo. Pull requests do
-Dependabot mantêm isso atualizado; esta tabela pode ficar desatualizada
+Dependabot mantêm isso atualizado. Esta tabela pode ficar desatualizada
 entre atualizações.
 
 | Ferramenta | Versão de referência |

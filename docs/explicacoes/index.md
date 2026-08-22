@@ -7,13 +7,16 @@ quer entender antes de adaptar.
 ## Por que MkDocs Material, e não outra ferramenta
 
 MkDocs Material foi escolhido por três razões concretas, não por
-popularidade: gera um site estático a partir de Markdown puro (sem exigir
-componente próprio de conteúdo, ao contrário do Docusaurus, que usa MDX e
-React); tem busca full-text embutida sem serviço externo; e o modo escuro e
-claro já vêm prontos, sem CSS adicional. O custo é menos flexibilidade
-visual do que uma ferramenta baseada em componentes React permitiria. Para
-um template cujo objetivo é documentação técnica de texto corrido, esse
-custo vale a troca.
+popularidade:
+
+- Gera um site estático a partir de Markdown puro, sem exigir componente
+  próprio de conteúdo, ao contrário do Docusaurus, que usa MDX e React.
+- Tem busca full-text embutida, sem depender de serviço externo.
+- Modo escuro e modo claro já vêm prontos, sem CSS adicional.
+
+O custo é menos flexibilidade visual do que uma ferramenta baseada em
+componentes React permitiria. Para um template cujo objetivo é
+documentação técnica de texto corrido, esse custo vale a troca.
 
 ## Por que quality gates automatizados, e não só revisão humana
 

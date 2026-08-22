@@ -21,8 +21,8 @@ confirmar que ele existe e está habilitado:
 1. Abra a aba **Actions** do repositório.
 2. Procure o workflow chamado **docs**.
 3. Se ele aparece na lista, está ativo. Se a aba Actions mostra um aviso de
-   que Actions está desabilitado para o repositório, habilite em
-   **Settings → Actions → General**.
+   que Actions está desabilitado para o repositório, habilite em Settings,
+   Actions, General.
 
 ## Publique
 
@@ -30,16 +30,16 @@ Faça um push para `main` (ou faça merge de um PR nela). O workflow gera o
 site com `mkdocs build --strict` e publica o resultado.
 
 Acompanhe o progresso na aba **Actions**. Quando o job **deploy** terminar
-com sucesso, a URL do site aparece no resumo do workflow e em
-**Settings → Pages**.
+com sucesso, a URL do site aparece no resumo do workflow e em Settings,
+Pages.
 
 ## Verificando o resultado
 
 - A URL segue o padrão `https://SEU-USUARIO.github.io/SEU-REPOSITORIO/`.
 - Se o build falhar em `mkdocs build --strict`, a causa mais comum é um
   link interno quebrado. O log do job mostra qual arquivo e qual link.
-- Se o job `deploy` falhar mas o `build` passou, confirme que a **Source**
-  em Settings → Pages está mesmo em **GitHub Actions**, não em branch.
+- Se o job `deploy` falhar mas o `build` passou, confirme que a Source em
+  Settings, Pages está mesmo em GitHub Actions, não em branch.
 
 ## Ver também
 

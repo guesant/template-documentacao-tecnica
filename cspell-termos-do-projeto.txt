@@ -101,4 +101,5 @@ homóglifos
 full
 AGENTS
 GEMINI
+convencoes
 

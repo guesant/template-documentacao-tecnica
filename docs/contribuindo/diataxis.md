@@ -31,8 +31,8 @@ perdida no lugar errado).
 - **Quem escreve** sabe onde colocar cada conteúdo novo, sem debate a cada PR.
 - **Quem lê** sabe o que esperar de cada seção: não precisa varrer um
   tutorial gigante para achar um detalhe de referência.
-- **A manutenção fica mais fácil**: referência muda quando o comportamento
-  muda; tutoriais e guias mudam raramente; explicações quase nunca.
+- **A manutenção fica mais fácil.** Referência muda quando o comportamento
+  muda. Tutoriais e guias mudam raramente. Explicações quase nunca mudam.
 
 Essa divisão não é uma peculiaridade deste template. O
 [Google Developer Documentation Style Guide](referencias.md#google-style)
@@ -50,10 +50,10 @@ framework específico.
 
 ## Como isso se aplica neste template
 
-- [`docs/tutoriais/`](../tutoriais/index.md) — passo a passo, do zero a um resultado.
-- [`docs/guias-como-fazer/`](../guias-como-fazer/index.md) — solução para um problema específico.
-- [`docs/referencia/`](../referencia/index.md) — descrição técnica precisa, para consulta.
-- [`docs/explicacoes/`](../explicacoes/index.md) — contexto e decisões, como esta própria página.
+- [`docs/tutoriais/`](../tutoriais/index.md): passo a passo, do zero a um resultado.
+- [`docs/guias-como-fazer/`](../guias-como-fazer/index.md): solução para um problema específico.
+- [`docs/referencia/`](../referencia/index.md): descrição técnica precisa, para consulta.
+- [`docs/explicacoes/`](../explicacoes/index.md): contexto e decisões, como esta própria página.
 
 Veja o [guia de como escrever uma página nova](como-escrever-documentacao.md)
 para aplicar isso na prática, a [referência de convenções de escrita](convencoes-de-escrita.md)

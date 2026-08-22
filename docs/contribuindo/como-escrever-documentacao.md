@@ -45,8 +45,8 @@ normas do projeto.
 
 Depois de publicado, confirme que:
 
-- a página aparece no menu de navegação;
-- os links internos funcionam (`mkdocs build --strict` falha se houver link quebrado);
+- a página aparece no menu de navegação.
+- os links internos funcionam (`mkdocs build --strict` falha se houver link quebrado).
 - o tipo de conteúdo está de fato na pasta certa. Se você misturou explicação
   dentro de um guia prático, considere separar em duas páginas.
 

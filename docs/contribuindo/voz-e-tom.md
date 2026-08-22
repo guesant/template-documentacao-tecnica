@@ -11,11 +11,11 @@ pena manter explícita, porque as duas coisas quebram por motivos diferentes.
 
 | Princípio | O que significa aqui | Fonte |
 |---|---|---|
-| Direta e sem enrolação | Vá ao ponto na primeira frase do parágrafo; contexto vem depois, se for necessário | [Google Developer Documentation Style Guide](referencias.md#google-style) |
-| Acolhedora, não condescendente | Explique sem presumir ignorância nem exibir conhecimento; trate quem lê como colega capaz | [Microsoft Writing Style Guide](referencias.md#microsoft-style) |
+| Direta e sem enrolação | Vá ao ponto na primeira frase do parágrafo. Contexto vem depois, se for necessário | [Google Developer Documentation Style Guide](referencias.md#google-style) |
+| Acolhedora, não condescendente | Explique sem presumir ignorância nem exibir conhecimento. Trate quem lê como colega capaz | [Microsoft Writing Style Guide](referencias.md#microsoft-style) |
 | Confiante, não hesitante | Evite "talvez", "provavelmente", "acho que" em instruções. Se não há certeza, isso é um problema de conteúdo, não de tom | [Microsoft Writing Style Guide](referencias.md#microsoft-style) |
 | Humana, não corporativa | Prefira linguagem natural a jargão de marketing ou burocratês institucional | [GOV.UK Style guide](referencias.md#gov-uk) |
-| Consistente entre páginas | A voz não muda por quem escreveu a página — normalize em revisão | [GitLab Documentation Style Guide](referencias.md#gitlab-style) |
+| Consistente entre páginas | A voz não muda por quem escreveu a página. Normalize em revisão | [GitLab Documentation Style Guide](referencias.md#gitlab-style) |
 
 A Microsoft resume seus quatro atributos de voz como algo como "caloroso e
 acolhedor", "direto e claro", "pronto para ajudar" e "vivo e interessante"
@@ -71,24 +71,25 @@ quando a notícia é ruim.
   sejam verificados os logs"). Prefira dizer quem decide e o que fazer.
 - **Certeza falsa.** Não afirme que algo "nunca falha" ou "sempre funciona".
   Documentação técnica erra menos quando é honesta sobre limites.
-- **Travessão como muleta de escrita.** Ver a regra em
-  [Convenções de escrita](convencoes-de-escrita.md#uso-do-travessao). É um
-  problema de tom, não só de pontuação: encadear ideias com travessão em
-  vez de parar para pontuar de verdade é o jeito mais comum de uma frase
-  soar apressada em vez de confiante.
+- **Travessão, meia-risca ou seta em vez de pontuação de verdade.** Este
+  template não usa nenhum dos três em nenhuma página. Regra completa em
+  [Convenções de escrita](convencoes-de-escrita.md#pontuacao-banida). É um
+  problema de tom, não só de pontuação: encadear ideias sem parar para
+  pontuar de verdade é o jeito mais comum de uma frase soar apressada em
+  vez de confiante.
 
 ## Exemplos: antes e depois
 
 Aplicar as regras acima na prática, com reescritas reais deste próprio
 projeto.
 
-**Passiva e travessão em excesso, versão antes:**
+**Passiva e frases encadeadas sem pontuar de verdade, versão antes:**
 
-> "A configuração é lida pelo comando na inicialização — e caso um valor
-> inválido seja encontrado, um erro é reportado — o que pode ser evitado
+> "A configuração é lida pelo comando na inicialização, e caso um valor
+> inválido seja encontrado, um erro é reportado, o que pode ser evitado
 > validando o arquivo antes."
 
-**Ativa, direta, um travessão a menos, versão depois:**
+**Ativa, direta, uma ideia por frase, versão depois:**
 
 > "O comando lê a configuração na inicialização. Se encontrar um valor
 > inválido, reporta um erro. Valide o arquivo antes para evitar isso."
@@ -104,8 +105,8 @@ projeto.
 
 ## Ver também
 
-- [Convenções de escrita](convencoes-de-escrita.md) — regras objetivas de
+- [Convenções de escrita](convencoes-de-escrita.md): regras objetivas de
   formatação e estrutura, incluindo os níveis de obrigatoriedade (DEVE,
   DEVERIA, PODE).
-- [Por que a documentação é organizada em quatro tipos](diataxis.md) —
+- [Por que a documentação é organizada em quatro tipos](diataxis.md):
   como o tipo de página influencia o tom.

@@ -46,30 +46,33 @@ não em exceções soltas espalhadas pelo texto.
 docker run --rm -v "$PWD:/work" -w /work node:24-alpine sh -c "npm ci && npm run lint:spell"
 ```
 
-## 3. Tipografia (emoji, caractere invisível, aspa tipográfica)
+## 3. Tipografia (emoji, pontuação banida, caractere invisível)
 
-**O que verifica:** três classes de problema, em ordem de gravidade.
+**O que verifica:** cinco classes de problema, em ordem de gravidade.
 
 1. <a id="emojis"></a>**Emoji.** Nunca permitido em conteúdo publicado (ver
    [Convenções de escrita](convencoes-de-escrita.md)). Documentação técnica
    não usa emoji como substituto de clareza de texto.
-2. **Caractere invisível.** Espaço de largura zero, hífen suave, BOM no meio do
-   arquivo. Normalmente artefato de copiar e colar de outra ferramenta
-   (editor de texto rico, PDF, página web). Nunca deveria estar num arquivo
-   de texto corrido, e é praticamente impossível notar a olho nu.
-3. **Qualquer caractere fora do alfabeto latino padrão de prosa técnica em
-   português.** A lista aprovada é curta: letras acentuadas (á, ç, ã, ...),
-   travessão, meia-risca, reticências, setas. Qualquer coisa fora disso é
-   reportada: desde um homóglifo cirílico que imita uma letra latina até
+2. **Caractere invisível.** Espaço de largura zero, hífen suave, BOM no
+   meio do arquivo. Normalmente artefato de copiar e colar de outra
+   ferramenta (editor de texto rico, PDF, página web). Nunca deveria estar
+   num arquivo de texto corrido, e é praticamente impossível notar a olho
+   nu.
+3. **Pontuação banida.** Travessão, meia-risca, seta (em qualquer
+   direção), ponto e vírgula fora de bloco de código, e reticências como
+   caractere Unicode único em vez de três pontos digitados. Regra completa
+   em [Convenções de escrita](convencoes-de-escrita.md#pontuacao-banida).
+4. **Aspa tipográfica.** Aspas curvas em vez de aspas retas (`"..."`,
+   `'...'`).
+5. **Qualquer caractere fora do alfabeto latino padrão de prosa técnica em
+   português.** A lista aprovada é curta: letras acentuadas (á, ç, ã, ...)
+   e reticências digitadas como três pontos. Qualquer coisa fora disso é
+   reportada, desde um homóglifo cirílico que imita uma letra latina até
    arte ASCII de caixa (os caracteres Unicode de desenho de linha usados
    para montar diagramas de árvore de diretório à mão) num diagrama
    desenhado manualmente, que é justamente o tipo de coisa difícil de
-   manter sincronizada (esse problema específico é o motivo de este
-   template não ter mais um diagrama de árvore manual no `README.md`).
-
-Também rejeita aspas tipográficas (`"..."`) em favor de aspas retas
-(`"..."`), pela razão prática descrita em
-[Convenções de escrita](convencoes-de-escrita.md#uso-do-travessao).
+   manter sincronizada. Esse problema específico é o motivo de este
+   template não ter mais um diagrama de árvore manual no `README.md`.
 
 **Ferramenta:** [`scripts/check_tipografia.py`](https://github.com/guesant/template-documentacao-tecnica/blob/main/scripts/check_tipografia.py),
 script Python puro escrito para este template (sem dependência externa,
@@ -98,8 +101,9 @@ mkdocs build --strict
 
 Nenhuma das quatro verificações lê o texto pelo sentido. Elas não pegam:
 
-- Se o parágrafo usa mais de um travessão como muleta de escrita (ver
-  [Convenções de escrita](convencoes-de-escrita.md#uso-do-travessao)).
+- Se o parágrafo repete a mesma palavra entre crases várias vezes seguidas
+  em vez de nomear uma vez e seguir em prosa comum (ver
+  [Convenções de escrita](convencoes-de-escrita.md#uso-de-codigo-inline)).
 - Se o tom está certo para o tipo de página (ver [Voz e tom](voz-e-tom.md)).
 - Se o conteúdo está, de fato, no tipo certo de página segundo
   [Diátaxis](diataxis.md), e não só na pasta certa.
