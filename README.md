@@ -81,7 +81,8 @@ docker run --rm -v "$PWD:/work" -w /work node:24-alpine npm run lint
 
 ## Usando este template
 
-Clique em Use this template no GitHub, ou clone diretamente:
+Clique em [Use this template](https://github.com/guesant/template-documentacao-tecnica/generate)
+ou clone diretamente:
 
 ```bash
 git clone https://github.com/guesant/template-documentacao-tecnica.git meu-projeto-docs

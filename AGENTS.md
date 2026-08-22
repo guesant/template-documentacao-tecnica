@@ -71,13 +71,17 @@ por padrão, então a checagem manual extra vale a pena.
 - **Todo diagrama de fluxo, decisão ou estrutura DEVE ser Mermaid**, não
   descrição só em texto. Cada página de `docs/` DEVE ter pelo menos um
   diagrama que ajude a visualizar o conteúdo, não decoração.
-- **Lista numerada só quando a ordem importa de verdade, e no máximo sete
-  itens (ordenada ou não).** Regra completa, com fontes:
+- **Lista existe para enumerar itens discretos, não para substituir
+  prosa. Numerada só quando a ordem importa, e no máximo sete itens
+  (ordenada ou não).** Regra completa, com fontes:
   [Convenções de escrita, âncora listas-vs-prosa](docs/contribuindo/convencoes-de-escrita.md#listas-vs-prosa).
-  Reforço: enumerar tudo em lista numerada, mesmo coisas paralelas, é um
-  tique comum de texto gerado por IA. Se a lista que você gerou passou de
-  sete itens, isso é sinal de que você despejou uma lista de ideias em vez
-  de escrever prosa ou agrupar em subseções: pare e reestruture.
+  Reforço: se você está prestes a listar duas ou três frases que só fazem
+  sentido juntas, lidas em sequência, isso é um parágrafo que você está
+  fatiando, não uma lista de verdade. Escreva o parágrafo. Enumerar tudo
+  em lista, numerada ou não, é um tique comum de texto gerado por IA. Se
+  a lista que você gerou passou de sete itens, isso é sinal de que você
+  despejou uma lista de ideias em vez de escrever prosa ou agrupar em
+  subseções: pare e reestruture.
 
 Antes de considerar uma tarefa de documentação terminada, rode os quality
 gates (ver abaixo) e corrija tudo que falhar. Não proponha uma mudança em

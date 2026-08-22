@@ -22,9 +22,10 @@ flowchart LR
 
 ## Passo 1: obtenha uma cópia do repositório
 
-Se você está adotando este template para um projeto novo, clique em **Use
-this template** na página do repositório no GitHub e crie o seu próprio
-repositório a partir dele. Depois clone o seu repositório novo:
+Se você está adotando este template para um projeto novo, clique em
+[Use this template](https://github.com/guesant/template-documentacao-tecnica/generate)
+e crie o seu próprio repositório a partir dele. Depois clone o seu
+repositório novo:
 
 ```bash
 git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git

@@ -157,6 +157,19 @@ condicionais é, na prática, um guia prático disfarçado.
 
 <a id="listas-vs-prosa"></a>
 
+**Lista serve para enumerar itens discretos, não para substituir
+prosa.** Vale para lista numerada e para lista com marcadores. Uma lista
+existe para separar coisas que são, de fato, itens distintos e
+comparáveis entre si (passos, opções, ferramentas, regras). Se o que você
+tem é uma ideia com começo, meio e fim, contada em duas ou três frases
+que se conectam, isso é um parágrafo, não uma lista, mesmo que dê pra
+quebrar em pedaços. O [Microsoft Writing Style Guide](referencias.md#microsoft-style)
+define lista com marcadores como para "coisas que têm algo em comum mas
+não precisam aparecer em uma ordem específica" e lista numerada para
+"itens sequenciais ou priorizados": nos dois casos, o pressuposto é que
+os itens já eram discretos antes de virarem lista. A lista não cria essa
+separação, só expõe uma que já existe no conteúdo.
+
 **Lista numerada só quando a ordem importa de verdade.** Uma lista
 numerada afirma implicitamente "faça 1, depois 2, depois 3" ou "isto está
 ranqueado". Se os itens não dependem da ordem entre si (são fatos

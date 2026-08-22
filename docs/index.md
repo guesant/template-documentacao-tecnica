@@ -51,7 +51,8 @@ apagar.
 
 ## Usando este template
 
-1. Clique em **Use this template** no GitHub para criar um repositório novo a partir deste.
+1. Clique em [Use this template](https://github.com/guesant/template-documentacao-tecnica/generate)
+   para criar um repositório novo a partir deste.
 2. Ajuste o nome do site e a URL do repositório em `mkdocs.yml`.
 3. Substitua os arquivos de exemplo em cada pasta pelo conteúdo real do seu projeto.
 4. Ajuste a aba [Contribuindo](contribuindo/index.md) às regras da sua
