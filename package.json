@@ -1,0 +1,16 @@
+{
+  "name": "template-documentacao-tecnica",
+  "private": true,
+  "description": "Quality gates de documentação (lint, ortografia, tipografia) para este template",
+  "scripts": {
+    "lint:md": "markdownlint-cli2",
+    "lint:spell": "cspell --no-progress --show-context",
+    "lint:tipografia": "python3 scripts/check_tipografia.py",
+    "lint": "npm run lint:md && npm run lint:spell && npm run lint:tipografia"
+  },
+  "devDependencies": {
+    "@cspell/dict-pt-br": "^2.4.2",
+    "cspell": "^10.1.0",
+    "markdownlint-cli2": "^0.23.2"
+  }
+}

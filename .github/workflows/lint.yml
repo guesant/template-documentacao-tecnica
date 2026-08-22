@@ -1,0 +1,60 @@
+name: quality-gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-gates-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  markdown-lint:
+    name: markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run lint:md
+
+  spell-check:
+    name: cspell (pt-BR)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run lint:spell
+
+  tipografia:
+    name: emojis e caracteres não padronizados
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.x"
+      - run: python3 scripts/check_tipografia.py
+
+  mkdocs-build:
+    name: mkdocs build --strict
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.x"
+      - run: pip install -r requirements.txt
+      - run: mkdocs build --strict

@@ -1,0 +1,30 @@
+{
+  "config": {
+    "default": true,
+    // Prosa longa é normal em documentação; largura de linha não é uma
+    // preocupação de qualidade aqui.
+    "MD013": false,
+    // MkDocs Material usa admonitions (`!!! warning`) em vez de blockquotes
+    // para avisos, mas blockquotes continuam válidos para citação de fontes.
+    "MD028": false,
+    // Título de página (h1) não precisa repetir o nome do arquivo.
+    "MD041": false,
+    // Permite links de referência estilo `[texto](url)` e âncoras `<a id="">`
+    // usadas para citações cruzadas entre páginas de contribuindo/.
+    "MD033": {
+      "allowed_elements": ["a"]
+    },
+    // Regra nova (introduzida na v0.41) e excessivamente estrita sobre
+    // espaçamento de `|` em tabelas escritas à mão; não afeta legibilidade
+    // nem renderização.
+    "MD060": false
+  },
+  "globs": [
+    "**/*.md"
+  ],
+  "ignores": [
+    "site/**",
+    "node_modules/**",
+    ".venv-check/**"
+  ]
+}

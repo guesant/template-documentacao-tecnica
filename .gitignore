@@ -1,0 +1,12 @@
+site/
+.cache/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Python
+.venv/
+.venv-check/
+
+# Node (quality gates: markdownlint, cspell)
+node_modules/

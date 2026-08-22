@@ -1,0 +1,59 @@
+site_name: Template de Documentação Técnica
+site_description: Template docs-as-code inspirado no framework Diátaxis
+repo_url: https://github.com/guesant/template-documentacao-tecnica
+repo_name: guesant/template-documentacao-tecnica
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Alternar para modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Alternar para modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+    - content.code.copy
+
+nav:
+  - Início: index.md
+  - Documentação:
+      - Tutoriais: tutoriais/index.md
+      - Guias práticos:
+          - guias-como-fazer/index.md
+          - Publicar no GitHub Pages: guias-como-fazer/publicar-no-github-pages.md
+          - Rodar quality gates localmente: guias-como-fazer/rodar-quality-gates-localmente.md
+      - Referência: referencia/index.md
+      - Explicações: explicacoes/index.md
+  - Contribuindo:
+      - contribuindo/index.md
+      - Por que Diátaxis: contribuindo/diataxis.md
+      - Voz e tom: contribuindo/voz-e-tom.md
+      - Convenções de escrita: contribuindo/convencoes-de-escrita.md
+      - Como escrever documentação: contribuindo/como-escrever-documentacao.md
+      - Quality gates: contribuindo/qualidade.md
+      - Referências: contribuindo/referencias.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - toc:
+      permalink: true
+
+plugins:
+  - search
