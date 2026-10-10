@@ -10,8 +10,8 @@
     "lint": "npm run lint:md && npm run lint:spell && npm run lint:tipografia"
   },
   "devDependencies": {
-    "@cspell/dict-pt-br": "^2.4.2",
-    "cspell": "^10.1.0",
-    "markdownlint-cli2": "^0.23.2"
+    "@cspell/dict-pt-br": "^2.4.3",
+    "cspell": "^10.3.6",
+    "markdownlint-cli2": "^0.23.3"
   }
 }
